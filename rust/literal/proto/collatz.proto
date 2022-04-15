@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.github.ebagos.collatz";
+option java_outer_classname = "CollatzProto";
+
+package collatz;
+option go_package = "github.com/ebagos/collatz/go/literal/proto";
+
+service Calculator {
+    rpc calcCollatz(CollatzRequest) returns (CollatzResponse) {}
+}
+
+message CollatzRequest {
+    int64 index_from = 1;
+    int64 index_to = 2;
+}
+
+message CollatzResponse {
+    int64 max_length = 1;
+    int64 index = 2;
+}
