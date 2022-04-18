@@ -20,10 +20,10 @@ public class LiteralApplication {
 			Long index_from = req.getIndexFrom();
 			Long index_to = req.getIndexTo();
 			Pair pair = collatzLoop(index_from, index_to);
-			CollatzResponse res;
-			res = CollatzResponse.newBuilder().setIndex(pair.second).build();
-			res = CollatzResponse.newBuilder().setMaxLength(pair.first).build();
-			resObserver.onNext(res);
+			CollatzResponse.Builder res = CollatzResponse.newBuilder()
+				.setIndex(pair.second)
+				.setMaxLength(pair.first);
+			resObserver.onNext(res.build());
 			resObserver.onCompleted();
 		}
 
