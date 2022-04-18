@@ -16,7 +16,7 @@ jobs:
   build_and_push:
     strategy:
       matrix:
-        target: [go/literal, kotlin/literal, rust/literal]
+        target: [go/literal, kotlin/literal, rust/literal, spring/literal]
         os: [ubuntu-latest]
     runs-on: ubuntu-latest
     steps:
