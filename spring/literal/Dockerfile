@@ -2,8 +2,8 @@ FROM openjdk:11.0.14.1-jdk-buster AS build
 
 ARG PROTOC_VERSION="3.20.0"
 
-ADD https://github.com/google/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip ./
-RUN unzip protoc-${PROTOC_VERSION}-linux-x86_64.zip -d /usr/local
+#ADD https://github.com/google/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip ./
+#RUN unzip protoc-${PROTOC_VERSION}-linux-x86_64.zip -d /usr/local
 
 ENV PROTOC /usr/local/bin/protoc
 ENV PROTOC_INCLUDE /usr/local/include
